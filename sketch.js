@@ -40,9 +40,10 @@ function gotData(data) {
   moni = data;
 }
 
-// function preload(){
-// usdimg=loadImage('EARTH.png');
-//}
+function preload(){
+usdimg = loadImage("EARTH.png");
+}
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
   let url = 'https://api.exchangerate-api.com/v4/latest/USD';
@@ -84,9 +85,13 @@ function setup() {
 function draw() {
   background(20);
   stars();
+  if(moni){
   extracircles();
   maincircle();
-
+  //loading the image here
+  imageMode(CENTER);
+  image(usdimg, width/2, height/2, 100, 100);
+  }
 
 
 }
